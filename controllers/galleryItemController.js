@@ -1,5 +1,6 @@
 import GalleryItem from "../models/galleryItem.js"
 
+
 //-------------------------Add new Gallery item------------------------------
 export function createGalleryItem(req, res){   
    
