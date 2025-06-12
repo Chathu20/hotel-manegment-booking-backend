@@ -18,10 +18,12 @@ app.use(cors())
 
 app.use(bodyParser.json())
 
-const connectionString = process.env.MONGO_URL
+const connectionString = process.env.MONGO_URL;
 
 app.use((req, res, next)=>{          //Authentication middleware
+   
     const token = req.header("Authorization")?.replace("Bearer ","")
+    
     if(token != null){
         jwt.verify(token,process.env.JWT_KEY,(err,decoded)=>{
             if(decoded != null){
